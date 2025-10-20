@@ -11,8 +11,10 @@ const Header = () => {
       setHasScroll(window.scrollY > 32);
     };
 
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.addEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
